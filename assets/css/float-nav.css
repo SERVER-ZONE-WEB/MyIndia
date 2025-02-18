@@ -1,0 +1,58 @@
+.float-nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.float-nav-button {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 1001;
+    background: #ff9933;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.float-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.float-nav li {
+    margin: 10px 0;
+}
+
+.float-nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.float-nav a:hover {
+    background: #f0f0f0;
+}
+
+.float-nav i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+.float-nav.hidden {
+    display: none;
+}

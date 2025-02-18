@@ -6,7 +6,7 @@
     <meta name="page-name" content="home" />
     <meta
       name="description"
-      content="Discover India's rich heritage, culture, history, and more at MyIndia.io"
+      content="Discover India's rich heritage, culture, history, and more at MyIndia"
     />
     <meta name="keywords" content="India, culture, history, tourism" />
     <title>My India - Your Guide to Incredible India</title>
@@ -17,6 +17,85 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="/assets/css/float-nav.css" />
+    <style>
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("/assets/images/india-banner.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      .hero-section h1 {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .page-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 4rem 2rem;
+        background: #f5f5f5;
+      }
+
+      .page-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .page-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .page-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .page-card-content {
+        padding: 1.5rem;
+      }
+
+      .page-card h3 {
+        color: #333;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .page-card p {
+        color: #666;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .page-card a {
+        display: inline-block;
+        padding: 0.8rem 1.5rem;
+        background: linear-gradient(135deg, #ff9933, #138808);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: opacity 0.3s ease;
+      }
+
+      .page-card a:hover {
+        opacity: 0.9;
+      }
+    </style>
   </head>
   <body>
     <div id="header-placeholder"></div>
@@ -24,10 +103,7 @@
     <main>
       <section class="hero-section" data-aos="fade-up">
         <h1>Discover Incredible India</h1>
-        <p>
-          Explore the rich heritage, diverse culture, and vibrant history of the
-          world's largest democracy
-        </p>
+        <p>A journey through culture, history, and diversity</p>
       </section>
 
       <section class="features-grid">
@@ -48,8 +124,77 @@
         </div>
       </section>
 
-      <section class="category-grid">
-        <!-- Existing category cards -->
+      <section class="page-cards">
+        <div class="page-card" data-aos="fade-up">
+          <img src="/assets/images/history-thumb.jpg" alt="Indian History" />
+          <div class="page-card-content">
+            <h3>History</h3>
+            <p>
+              Explore 5000+ years of rich Indian history, from ancient
+              civilizations to modern democracy.
+            </p>
+            <a href="/pages/history.html">Learn More</a>
+          </div>
+        </div>
+
+        <div class="page-card" data-aos="fade-up" data-aos-delay="100">
+          <img src="/assets/images/culture-thumb.jpg" alt="Indian Culture" />
+          <div class="page-card-content">
+            <h3>Culture</h3>
+            <p>
+              Discover the vibrant traditions, festivals, arts, and customs of
+              India's diverse culture.
+            </p>
+            <a href="/pages/culture.html">Explore Culture</a>
+          </div>
+        </div>
+
+        <div class="page-card" data-aos="fade-up" data-aos-delay="200">
+          <img
+            src="/assets/images/geography-thumb.jpg"
+            alt="Indian Geography"
+          />
+          <div class="page-card-content">
+            <h3>Geography</h3>
+            <p>
+              From the Himalayas to the Indian Ocean, explore India's diverse
+              landscapes.
+            </p>
+            <a href="/pages/geography.html">View Landscapes</a>
+          </div>
+        </div>
+
+        <div class="page-card" data-aos="fade-up" data-aos-delay="300">
+          <img src="/assets/images/economy-thumb.jpg" alt="Indian Economy" />
+          <div class="page-card-content">
+            <h3>Economy</h3>
+            <p>
+              Learn about India's growing economy and its position in the global
+              market.
+            </p>
+            <a href="/pages/economy.html">Explore Economy</a>
+          </div>
+        </div>
+
+        <div class="page-card" data-aos="fade-up" data-aos-delay="400">
+          <img src="/assets/images/politics-thumb.jpg" alt="Indian Politics" />
+          <div class="page-card-content">
+            <h3>Politics</h3>
+            <p>
+              Understand the world's largest democracy and its political system.
+            </p>
+            <a href="/pages/politics.html">Learn Politics</a>
+          </div>
+        </div>
+
+        <div class="page-card" data-aos="fade-up" data-aos-delay="500">
+          <img src="/assets/images/about-thumb.jpg" alt="About India" />
+          <div class="page-card-content">
+            <h3>About</h3>
+            <p>Get to know more about our mission and connect with us.</p>
+            <a href="/pages/about.html">About Us</a>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -57,6 +202,7 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="/js/components.js"></script>
+    <script src="/js/float-nav.js"></script>
     <script>
       AOS.init();
     </script>
