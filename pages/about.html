@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="page-name" content="about" />
+    <title>About Us - My India</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      .section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .section.active {
+        display: block;
+      }
+      .contact-form {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+      }
+      .contact-form button {
+        padding: 10px 20px;
+        background-color: #ff9933;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-placeholder"></div>
+
+    <main class="content">
+      <section id="about" class="section">
+        <h2>About India</h2>
+        <p>
+          India is a diverse country with rich cultural heritage spanning
+          thousands of years. It is the world's largest democracy and
+          second-most populous country.
+        </p>
+        <p>
+          With its varied landscapes from the Himalayas to the Indian Ocean,
+          India houses numerous languages, religions, and traditions that
+          coexist harmoniously.
+        </p>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+          <form id="contactForm">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/js/components.js"></script>
+    <script>
+      // Handle section visibility
+      function showSection(sectionId) {
+        document.querySelectorAll(".section").forEach((section) => {
+          section.classList.remove("active");
+        });
+        document.getElementById(sectionId).classList.add("active");
+
+        // Update page title and description
+        const title = document.getElementById("page-title");
+        const description = document.getElementById("page-description");
+
+        if (sectionId === "about") {
+          title.textContent = "About India";
+          description.textContent =
+            "Learn about India's rich heritage and culture";
+        } else {
+          title.textContent = "Contact Us";
+          description.textContent = "Get in touch with us";
+        }
+      }
+
+      // Handle hash change
+      function handleHashChange() {
+        const hash = window.location.hash.slice(1) || "about";
+        showSection(hash);
+      }
+
+      window.addEventListener("hashchange", handleHashChange);
+      window.addEventListener("DOMContentLoaded", handleHashChange);
+    </script>
+  </body>
+</html>
