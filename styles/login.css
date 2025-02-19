@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.form-container {
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+label {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #4CAF50;
+}
+
+input:focus {
+    border-bottom-color: #4CAF50;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+p {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.social-login {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-login p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.social-buttons button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    background: white;
+    color: #333;
+    font-size: 14px;
+    gap: 8px;
+}
+
+.social-buttons img {
+    width: 20px;
+    height: 20px;
+}
+
+.google-btn:hover {
+    background: #f1f1f1;
+}
+
+.facebook-btn {
+    background: #1877f2;
+    color: white;
+    border: none;
+}
+
+.facebook-btn:hover {
+    background: #166fe5;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyIndia - Login/Signup</title>
+    <link rel="stylesheet" href="../styles/login.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container" id="loginForm">
+            <h2>Login</h2>
+            <form onsubmit="return handleLogin(event)">
+                <div class="input-group">
+                    <input type="text" id="loginId" required>
+                    <label>Email or Mobile</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPassword" required>
+                    <label>Password</label>
+                </div>
+                <button type="submit">Login</button>
+                <div class="social-login">
+                    <p>Or login with</p>
+                    <div class="social-buttons">
+                        <button type="button" class="google-btn" onclick="handleGoogleLogin()">
+                            <img src="../assets/google-icon.png" alt="Google">
+                            Google
+                        </button>
+                        <button type="button" class="facebook-btn" onclick="handleFacebookLogin()">
+                            <img src="../assets/facebook-icon.png" alt="Facebook">
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+                <p>Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a></p>
+            </form>
+        </div>
+
+        <div class="form-container hidden" id="signupForm">
+            <h2>Create Account</h2>
+            <form onsubmit="return handleSignup(event)">
+                <div class="input-group">
+                    <input type="text" id="fullName" required>
+                    <label>Full Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="signupId" required>
+                    <label>Email or Mobile</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signupPassword" required>
+                    <label>Password</label>
+                </div>
+                <button type="submit">Sign Up</button>
+                <div class="social-login">
+                    <p>Or signup with</p>
+                    <div class="social-buttons">
+                        <button type="button" class="google-btn" onclick="handleGoogleLogin()">
+                            <img src="../assets/google-icon.png" alt="Google">
+                            Google
+                        </button>
+                        <button type="button" class="facebook-btn" onclick="handleFacebookLogin()">
+                            <img src="../assets/facebook-icon.png" alt="Facebook">
+                            Facebook
+                        </button>
+                    </div>
+                </div>
+                <p>Already have an account? <a href="#" onclick="toggleForms()">Login</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="../scripts/login.js"></script>
+</body>
+</html>
