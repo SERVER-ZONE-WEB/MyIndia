@@ -7,15 +7,30 @@
     <title>Indian Geography - My India</title>
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/float-nav.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="/assets/css/unique-pages.css" />
   </head>
   <body>
     <div id="header-placeholder"></div>
 
     <main class="content">
+      <section class="geo-interactive-map">
+        <div class="map-overlay">
+          <h2>Explore India's Geography</h2>
+          <div class="region-selector">
+            <button data-region="north">Northern India</button>
+            <button data-region="south">Southern India</button>
+            <button data-region="east">Eastern India</button>
+            <button data-region="west">Western India</button>
+          </div>
+        </div>
+        <div id="region-info" class="region-info"></div>
+      </section>
+
       <div class="feature-card">
         <h2>Physical Features</h2>
         <div class="image-gallery">
@@ -52,6 +67,20 @@
         </ul>
       </div>
 
+      <section class="climate-zones">
+        <h2>Climate Diversity</h2>
+        <div class="zone-cards">
+          <!-- Add interactive climate zone cards -->
+        </div>
+      </section>
+
+      <section class="resources-section">
+        <h2>Natural Resources</h2>
+        <div class="resource-grid">
+          <!-- Add resource information -->
+        </div>
+      </section>
+
       <section>
         <h2>Natural Resources</h2>
         <p>
@@ -64,5 +93,8 @@
 
     <div id="footer-placeholder"></div>
     <script src="/js/components.js"></script>
+    <script src="/js/float-nav.js"></script>
+    <script src="/js/geography-interactive.js"></script>
+    <script src="/js/footer.js"></script>
   </body>
 </html>

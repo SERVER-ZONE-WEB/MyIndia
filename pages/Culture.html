@@ -7,71 +7,96 @@
     <title>Indian Culture - My India</title>
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/float-nav.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <link rel="stylesheet" href="/assets/css/page-styles.css" />
   </head>
   <body>
     <div id="header-placeholder"></div>
 
     <main class="content">
-      <div class="feature-card">
-        <h2>Arts & Music</h2>
-        <div class="image-gallery">
-          <img
-            src="../images/culture/classical-dance.jpg"
-            alt="Classical Dance"
-          />
-          <img src="../images/culture/music.jpg" alt="Indian Music" />
-          <img src="../images/culture/art-forms.jpg" alt="Art Forms" />
+      <section class="culture-hero">
+        <div class="hero-content fade-in">
+          <h1>Experience India's Rich Culture</h1>
+          <p>A tapestry of traditions, art, and celebrations</p>
         </div>
-        <ul class="info-list">
-          <li>Classical Dance Forms - Bharatanatyam, Kathak, Odissi</li>
-          <li>Music Traditions - Hindustani and Carnatic</li>
-          <li>Folk Arts and Regional Dance Forms</li>
-          <li>Modern Indian Art and Cinema</li>
-        </ul>
-        <div class="highlight-box">
-          <p>
-            Bollywood produces over 1000 films annually, making it the world's
-            largest film industry by volume.
-          </p>
+      </section>
+
+      <section class="festival-calendar slide-up">
+        <h2>Festivals Around the Year</h2>
+        <div class="calendar-grid">
+          <!-- Add festival calendar items -->
+        </div>
+      </section>
+
+      <section class="art-forms fade-in">
+        <h2>Classical Arts</h2>
+        <div class="art-grid">
+          <!-- Add art form cards -->
+        </div>
+      </section>
+
+      <div class="culture-hero">
+        <h1>Indian Culture & Heritage</h1>
+        <div class="culture-carousel">
+          <div class="carousel-item">
+            <img
+              src="../images/culture/classical-dance.jpg"
+              alt="Classical Dance"
+            />
+            <h3>Classical Arts</h3>
+          </div>
+          <!-- ...more carousel items... -->
         </div>
       </div>
 
-      <div class="feature-card">
-        <h2>Languages & Literature</h2>
-        <div class="image-gallery">
-          <img src="../images/culture/languages.jpg" alt="Indian Languages" />
-          <img src="../images/culture/literature.jpg" alt="Indian Literature" />
-          <img src="../images/culture/scripts.jpg" alt="Indian Scripts" />
-        </div>
-        <ul class="info-list">
-          <li>22 Official Languages and Over 1600 Dialects</li>
-          <li>Rich Literary Heritage - Ancient to Modern</li>
-          <li>Sanskrit and Classical Literature</li>
-          <li>Contemporary Indian Writing</li>
-        </ul>
-      </div>
+      <section class="culture-grid">
+        <article class="culture-card festivals">
+          <h2>Festivals & Celebrations</h2>
+          <div class="festival-timeline">
+            <div class="timeline-item">
+              <span class="month">January</span>
+              <h4>Pongal & Makar Sankranti</h4>
+              <p>Harvest festivals celebrated across India</p>
+            </div>
+            <!-- ...more timeline items... -->
+          </div>
+        </article>
 
-      <div class="feature-card">
-        <h2>Festivals & Traditions</h2>
-        <div class="image-gallery">
-          <img src="../images/culture/diwali.jpg" alt="Diwali" />
-          <img src="../images/culture/holi.jpg" alt="Holi" />
-          <img src="../images/culture/festivals.jpg" alt="Festivals" />
-        </div>
-        <ul class="info-list">
-          <li>Major Festivals - Diwali, Holi, Eid, Christmas</li>
-          <li>Regional Festivals and Celebrations</li>
-          <li>Traditional Customs and Rituals</li>
-          <li>Cultural Diversity and Unity</li>
-        </ul>
-      </div>
+        <article class="culture-card cuisine">
+          <h2>Indian Cuisine</h2>
+          <div class="cuisine-regions">
+            <div class="region-item">
+              <h4>North Indian</h4>
+              <ul>
+                <li>Butter Chicken</li>
+                <li>Biryani</li>
+                <li>Tandoori Specialties</li>
+              </ul>
+            </div>
+            <!-- ...more regions... -->
+          </div>
+        </article>
+
+        <article class="culture-card traditions">
+          <h2>Traditional Arts</h2>
+          <div class="art-showcase">
+            <div class="art-item">
+              <img src="../images/culture/madhubani.jpg" alt="Madhubani" />
+              <h4>Madhubani Painting</h4>
+            </div>
+            <!-- ...more art items... -->
+          </div>
+        </article>
+      </section>
     </main>
 
     <div id="footer-placeholder"></div>
     <script src="/js/components.js"></script>
+    <script src="/js/float-nav.js"></script>
+    <script src="/js/footer.js"></script>
   </body>
 </html>

@@ -6,24 +6,50 @@ function createFloatingNav() {
   button.className = "float-nav-button";
   button.innerHTML = '<i class="fas fa-compass"></i>';
 
+  const currentPath = window.location.pathname.toLowerCase();
+
+  const links = [
+    { url: "/index.html", icon: "home", text: "Home" },
+    { url: "/pages/history.html", icon: "landmark", text: "History" },
+    { url: "/pages/culture.html", icon: "theater-masks", text: "Culture" },
+    { url: "/pages/geography.html", icon: "mountain", text: "Geography" },
+    { url: "/pages/economy.html", icon: "chart-line", text: "Economy" },
+    { url: "/pages/politics.html", icon: "vote-yea", text: "Politics" },
+    { url: "/pages/about.html", icon: "info-circle", text: "About" },
+  ];
+
   nav.innerHTML = `
         <ul>
-            <li><a href="/index.html"><i class="fas fa-home"></i>Home</a></li>
-            <li><a href="/pages/history.html"><i class="fas fa-landmark"></i>History</a></li>
-            <li><a href="/pages/culture.html"><i class="fas fa-theater-masks"></i>Culture</a></li>
-            <li><a href="/pages/geography.html"><i class="fas fa-mountain"></i>Geography</a></li>
-            <li><a href="/pages/economy.html"><i class="fas fa-chart-line"></i>Economy</a></li>
-            <li><a href="/pages/politics.html"><i class="fas fa-vote-yea"></i>Politics</a></li>
-            <li><a href="/pages/about.html"><i class="fas fa-info-circle"></i>About</a></li>
+            ${links
+              .map(
+                (link) => `
+                <li>
+                    <a href="${link.url}" class="${
+                  currentPath.endsWith(link.url.toLowerCase()) ? "active" : ""
+                }">
+                        <i class="fas fa-${link.icon}"></i>${link.text}
+                    </a>
+                </li>
+            `
+              )
+              .join("")}
         </ul>
     `;
 
   document.body.appendChild(button);
   document.body.appendChild(nav);
 
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (e) => {
+    e.stopPropagation();
     nav.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!nav.contains(e.target) && !button.contains(e.target)) {
+      nav.classList.add("hidden");
+    }
   });
 }
 
+// Initialize on DOM load
 document.addEventListener("DOMContentLoaded", createFloatingNav);

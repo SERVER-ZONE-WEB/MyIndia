@@ -1,0 +1,77 @@
+/* Geography Page Styles */
+.geo-interactive-map {
+    position: relative;
+    height: 600px;
+    background: #f0f7ff;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+.region-info {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Culture Page Styles */
+.festival-wheel {
+    height: 500px;
+    position: relative;
+    margin: 3rem 0;
+}
+
+.dance-forms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* History Timeline */
+.history-timeline {
+    position: relative;
+    padding-left: 50px;
+    margin: 3rem 0;
+}
+
+/* Economy Dashboard */
+.economy-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Politics Structure */
+.govt-branches {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+/* Common Animations */
+.fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
