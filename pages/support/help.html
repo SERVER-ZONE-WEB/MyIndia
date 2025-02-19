@@ -12,6 +12,43 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
+    <style>
+      /* Local styles for help page */
+      .support-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .tab-btn {
+        padding: 0.8rem 2rem;
+        border: none;
+        border-radius: 25px;
+        background: #f0f0f0;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .tab-btn.active {
+        background: #ff9933;
+        color: white;
+      }
+
+      .tab-content {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .tab-content.active {
+        display: block;
+        opacity: 1;
+      }
+    </style>
   </head>
   <body>
     <div id="header-placeholder"></div>
@@ -103,10 +140,57 @@
         <div class="feedback-container">
           <h2>Share Your Feedback</h2>
           <form id="feedbackForm" class="feedback-form">
+            <div class="rating-container">
+              <div class="rating-value">0.0</div>
+              <div class="stars-container">
+                <button
+                  type="button"
+                  class="star-btn"
+                  data-rating="1"
+                  title="Poor"
+                >
+                  ★
+                </button>
+                <button
+                  type="button"
+                  class="star-btn"
+                  data-rating="2"
+                  title="Fair"
+                >
+                  ★
+                </button>
+                <button
+                  type="button"
+                  class="star-btn"
+                  data-rating="3"
+                  title="Good"
+                >
+                  ★
+                </button>
+                <button
+                  type="button"
+                  class="star-btn"
+                  data-rating="4"
+                  title="Very Good"
+                >
+                  ★
+                </button>
+                <button
+                  type="button"
+                  class="star-btn"
+                  data-rating="5"
+                  title="Excellent"
+                >
+                  ★
+                </button>
+              </div>
+              <div class="rating-label">Select Rating</div>
+              <div class="rating-feedback"></div>
+            </div>
+
             <div class="form-group">
-              <label for="feedbackType">Feedback Type</label>
               <select id="feedbackType" required>
-                <option value="">Select Type</option>
+                <option value="">Select Feedback Type</option>
                 <option value="suggestion">Suggestion</option>
                 <option value="improvement">Improvement</option>
                 <option value="complaint">Complaint</option>
@@ -114,7 +198,6 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="feedbackContent">Your Feedback</label>
               <textarea
                 id="feedbackContent"
                 rows="6"
@@ -122,32 +205,7 @@
                 placeholder="Tell us what you think..."
               ></textarea>
             </div>
-            <div class="rating-group">
-              <label>Rate your experience:</label>
-              <div class="star-rating">
-                <input type="radio" name="rating" value="5" id="star5" /><label
-                  for="star5"
-                  >★</label
-                >
-                <input type="radio" name="rating" value="4" id="star4" /><label
-                  for="star4"
-                  >★</label
-                >
-                <input type="radio" name="rating" value="3" id="star3" /><label
-                  for="star3"
-                  >★</label
-                >
-                <input type="radio" name="rating" value="2" id="star2" /><label
-                  for="star2"
-                  >★</label
-                >
-                <input type="radio" name="rating" value="1" id="star1" /><label
-                  for="star1"
-                  >★</label
-                >
-              </div>
-            </div>
-            <button type="submit">Submit Feedback</button>
+            <button type="submit" class="submit-btn">Submit Feedback</button>
           </form>
         </div>
       </section>
@@ -157,5 +215,6 @@
 
     <script src="/js/components.js"></script>
     <script src="/js/support.js"></script>
+    <script src="/js/rating.js"></script>
   </body>
 </html>

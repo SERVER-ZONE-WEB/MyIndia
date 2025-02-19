@@ -3,137 +3,136 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MyIndia - Login/Signup</title>
-    <link rel="stylesheet" href="include/header.html" />
+    <meta name="page-name" content="auth" />
+    <title>Login/Signup - My India</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/components.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="/assets/css/login.css" />
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/common.css">
   </head>
-  <body>
+  <body class="auth-page">
     <div id="header-placeholder"></div>
-        <div class="form-container" id="loginForm">
-          <div class="corner-decoration top-left"></div>
-          <div class="corner-decoration bottom-right"></div>
-          <h2>Welcome Back</h2>
-          <div id="loginError" class="error-message hidden"></div>
-          <form onsubmit="return handleLogin(event)">
-            <div class="input-group">
-              <input
-                type="text"
-                id="loginId"
-                required
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$|[0-9]{10}"
-                title="Enter valid email or 10-digit mobile number"
-                placeholder="Email or Mobile"
-              />
-            </div>
-            <div class="input-group">
-              <input
-                type="password"
-                id="loginPassword"
-                required
-                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                title="Must contain at least one number, one uppercase and lowercase letter, and at least 8 characters"
-                placeholder="Password"
-              />
-            </div>
-            <button type="submit">Login</button>
-            <div class="social-login">
-              <p>Or login with</p>
-              <div class="social-buttons">
-                <button
-                  type="button"
-                  class="google-btn"
-                  onclick="handleGoogleLogin()"
-                >
-                  <i class="fab fa-google"></i>
-                  Google
-                </button>
-                <button
-                  type="button"
-                  class="facebook-btn"
-                  onclick="handleFacebookLogin()"
-                >
-                  <i class="fab fa-facebook-f"></i>
-                  Facebook
-                </button>
-              </div>
-            </div>
-            <p>
-              New to MyIndia?
-              <a href="#" onclick="toggleForms()">Create Account</a>
-            </p>
-          </form>
-        </div>
 
-        <div class="form-container hidden" id="signupForm">
-          <div class="corner-decoration top-left"></div>
-          <div class="corner-decoration bottom-right"></div>
-          <h2>Create Account</h2>
-          <div id="signupError" class="error-message hidden"></div>
-          <form onsubmit="return handleSignup(event)">
-            <div class="input-group">
-              <input
-                type="text"
-                id="fullName"
-                required
-                title="Full Name"
-                placeholder="Full Name"
-              />
+    <main class="auth-container">
+      <div class="glass-form" id="loginForm">
+        <h2>Welcome Back</h2>
+        <div id="loginError" class="error-message hidden"></div>
+        <form onsubmit="return handleLogin(event)">
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input
+              type="text"
+              id="loginId"
+              required
+              placeholder="Email or Mobile Number"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$|[0-9]{10}"
+            />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input
+              type="password"
+              id="loginPassword"
+              required
+              placeholder="Password"
+            />
+          </div>
+          <button type="submit" class="gradient-btn">Login</button>
+
+          <div class="social-login">
+            <p>Or login with</p>
+            <div class="social-buttons">
+              <button
+                type="button"
+                class="google-btn"
+                onclick="handleGoogleLogin()"
+                title="Login with Google"
+              >
+                <i class="fab fa-google"></i>
+              <button
+                type="button"
+                class="facebook-btn"
+                onclick="handleFacebookLogin()"
+                title="Login with Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </button>
+              </button>
             </div>
-            <div class="input-group">
-              <input
-                type="text"
-                id="signupId"
-                required
-                title="Email or Mobile"
-                placeholder="Email or Mobile"
-              />
+          </div>
+          <p class="switch-form">
+            New to MyIndia?
+            <a href="#" onclick="toggleForms()">Create Account</a>
+          </p>
+        </form>
+      </div>
+
+      <div class="glass-form hidden" id="signupForm">
+        <h2>Create Account</h2>
+        <div id="signupError" class="error-message hidden"></div>
+        <form onsubmit="return handleSignup(event)">
+          <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="fullName" required placeholder="Full Name" />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input
+              type="text"
+              id="signupId"
+              required
+              placeholder="Email or Mobile Number"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$|[0-9]{10}"
+            />
+          </div>
+          <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input
+              type="password"
+              id="signupPassword"
+              required
+              placeholder="Password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            />
+          </div>
+          <button type="submit" class="gradient-btn">Sign Up</button>
+
+          <div class="social-login">
+            <p>Or signup with</p>
+            <div class="social-buttons">
+              <button
+                type="button"
+                class="google-btn"
+                onclick="handleGoogleLogin()"
+                title="Login with Google"
+              >
+                <i class="fab fa-google"></i>
+              </button>
+              <button
+                type="button"
+                class="facebook-btn"
+                onclick="handleFacebookLogin()"
+                title="Login with Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </button>
             </div>
-            <div class="input-group">
-              <input
-                type="password"
-                id="signupPassword"
-                required
-                title="Password"
-                placeholder="Password"
-              />
-            </div>
-            <button type="submit">Sign Up</button>
-            <div class="social-login">
-              <p>Or signup with</p>
-              <div class="social-buttons">
-                <button
-                  type="button"
-                  class="google-btn"
-                  onclick="handleGoogleLogin()"
-                >
-                  <i class="fab fa-google"></i>
-                  Google
-                </button>
-                <button
-                  type="button"
-                  class="facebook-btn"
-                  onclick="handleFacebookLogin()"
-                >
-                  <i class="fab fa-facebook-f"></i>
-                  Facebook
-                </button>
-              </div>
-            </div>
-            <p>
-              Already have an account?
-              <a href="#" onclick="toggleForms()">Login</a>
-            </p>
-          </form>
-        </div>
+          </div>
+          <p class="switch-form">
+            Already have an account?
+            <a href="#" onclick="toggleForms()">Login</a>
+          </p>
+        </form>
       </div>
     </main>
+
     <div id="footer-placeholder"></div>
+
+    <script src="/js/components.js"></script>
+    <script src="/js/userAuth.js"></script>
     <script src="/js/login.js"></script>
   </body>
 </html>
