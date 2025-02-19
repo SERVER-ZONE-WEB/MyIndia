@@ -71,4 +71,29 @@ class PageComponent {
 // Initialize on page load
 document.addEventListener("DOMContentLoaded", () => {
   window.pageComponent = new PageComponent();
+  updateAuthButtons();
 });
+
+function updateAuthButtons() {
+  const loginButton = document.getElementById("loginButton");
+  const logoutButton = document.getElementById("logoutButton");
+  const userDisplay = document.getElementById("userDisplay");
+
+  const currentUser = JSON.parse(localStorage.getItem("myIndia_currentUser"));
+
+  if (currentUser) {
+    loginButton.classList.add("hidden");
+    logoutButton.classList.remove("hidden");
+    userDisplay.textContent = currentUser.fullName || "User";
+  } else {
+    loginButton.classList.remove("hidden");
+    logoutButton.classList.add("hidden");
+    userDisplay.textContent = "";
+  }
+}
+
+function handleLogout() {
+  localStorage.removeItem("myIndia_currentUser");
+  updateAuthButtons();
+  window.location.href = "/index.html";
+}

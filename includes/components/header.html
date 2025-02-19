@@ -7,28 +7,24 @@
   </div>
   <ul class="nav-links">
     <li><a href="/index.html" class="nav-link hover-effect">Home</a></li>
-    <li>
-      <a href="/pages/history.html" class="nav-link hover-effect">History</a>
-    </li>
-    <li>
-      <a href="/pages/culture.html" class="nav-link hover-effect">Culture</a>
-    </li>
-    <li>
-      <a href="/pages/geography.html" class="nav-link hover-effect"
-        >Geography</a
-      >
-    </li>
-    <li>
-      <a href="/pages/economy.html" class="nav-link hover-effect">Economy</a>
-    </li>
-    <li>
-      <a href="/pages/politics.html" class="nav-link hover-effect">Politics</a>
-    </li>
     <li><a href="/pages/about.html" class="nav-link hover-effect">About</a></li>
     <li>
-      <a href="/pages/support/contact.html" class="nav-link hover-effect"
-        >Contact</a
+      <a href="/pages/support/help.html#feedback" class="nav-link hover-effect"
+        >Feedback</a
       >
+    </li>
+    <li class="auth-nav">
+      <a href="/pages/login.html" class="nav-link hover-effect" id="loginButton"
+        >Login/Signup</a
+      >
+      <a
+        href="#"
+        class="nav-link hover-effect hidden"
+        id="logoutButton"
+        onclick="handleLogout()"
+      >
+        <span id="userDisplay"></span> (Logout)
+      </a>
     </li>
   </ul>
   <div class="search-container">
