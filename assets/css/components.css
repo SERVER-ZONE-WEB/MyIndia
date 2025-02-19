@@ -1,0 +1,123 @@
+/* Just add this one CSS file to handle both header and footer styles */
+.main-nav {
+    background: linear-gradient(135deg, #ff9933 0%, #ffffff 50%, #138808 100%);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.site-footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+    color: white;
+}
+
+/* Developer Section Styles */
+.developer-section {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.developer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
+}
+
+.developer-info {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.developer-info:hover {
+    transform: translateY(-5px);
+}
+
+.developer-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid #ff9933;
+    padding: 3px;
+}
+
+.developer-info h4 {
+    color: #ff9933;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.company-details {
+    color: #cccccc;
+    line-height: 1.6;
+    margin: 1rem 0;
+}
+
+.company-details .highlight {
+    color: #ff9933;
+    font-weight: bold;
+}
+
+.dev-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.dev-social-links a {
+    color: #ff9933;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.dev-social-links a:hover {
+    color: white;
+    transform: translateY(-3px) rotate(8deg);
+}
+
+/* Animations */
+.glow-animation {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 5px rgba(255, 153, 51, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(255, 153, 51, 0.8);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .developer-grid {
+        grid-template-columns: 1fr;
+    }
+}
