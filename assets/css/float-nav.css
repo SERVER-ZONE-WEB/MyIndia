@@ -1,3 +1,11 @@
+.float-nav-wrapper {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
 .float-nav {
     position: fixed;
     right: 20px;
@@ -35,25 +43,33 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    min-width: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 25px;
+    padding: 10px 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.float-nav li:not(:last-child) {
-    margin-bottom: 10px;
+.float-nav li {
+    margin: 10px 0;
 }
 
 .float-nav a {
     display: flex;
     align-items: center;
-    padding: 10px 15px;
-    color: #333;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: white;
     text-decoration: none;
-    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .float-nav a:hover {
-    background: rgba(255, 153, 51, 0.1);
+    background: #ff9933;
     transform: translateX(-5px);
 }
 
@@ -72,6 +88,25 @@
     transform: translate(100%, -50%);
     opacity: 0;
     pointer-events: none;
+}
+
+.tooltip {
+    position: absolute;
+    right: 45px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.float-nav a:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
 }
 
 @media (max-width: 768px) {

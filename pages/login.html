@@ -1,138 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="page-name" content="auth" />
-    <title>Login/Signup - My India</title>
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="stylesheet" href="/assets/css/components.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="/assets/css/login.css" />
-  </head>
-  <body class="auth-page">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyIndia - Login/Signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/float-nav.css">
+</head>
+<body>
     <div id="header-placeholder"></div>
 
-    <main class="auth-container">
-      <div class="glass-form" id="loginForm">
-        <h2>Welcome Back</h2>
-        <div id="loginError" class="error-message hidden"></div>
-        <form onsubmit="return handleLogin(event)">
-          <div class="input-group">
-            <i class="fas fa-user"></i>
-            <input
-              type="text"
-              id="loginId"
-              required
-              placeholder="Email or Mobile Number"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$|[0-9]{10}"
-            />
-          </div>
-          <div class="input-group">
-            <i class="fas fa-lock"></i>
-            <input
-              type="password"
-              id="loginPassword"
-              required
-              placeholder="Password"
-            />
-          </div>
-          <button type="submit" class="gradient-btn">Login</button>
+    <!-- Fixed Floating Navigation -->
+    <div class="float-nav-wrapper">
+        <nav class="float-nav">
+            <ul>
+                <li>
+                    <a href="/pages/history.html" title="History">
+                        <i class="fas fa-history"></i>
+                        <span class="tooltip">History</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/pages/culture.html" title="Culture">
+                        <i class="fas fa-theater-masks"></i>
+                        <span class="tooltip">Culture</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/pages/geography.html" title="Geography">
+                        <i class="fas fa-mountain"></i>
+                        <span class="tooltip">Geography</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/pages/economy.html" title="Economy">
+                        <i class="fas fa-rupee-sign"></i>
+                        <span class="tooltip">Economy</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/pages/politics.html" title="Politics">
+                        <i class="fas fa-landmark"></i>
+                        <span class="tooltip">Politics</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
-          <div class="social-login">
-            <p>Or login with</p>
-            <div class="social-buttons">
-              <button
-                type="button"
-                class="google-btn"
-                onclick="handleGoogleLogin()"
-                title="Login with Google"
-              >
-                <i class="fab fa-google"></i>
-              <button
-                type="button"
-                class="facebook-btn"
-                onclick="handleFacebookLogin()"
-                title="Login with Facebook"
-              >
-                <i class="fab fa-facebook-f"></i>
-              </button>
-              </button>
-            </div>
-          </div>
-          <p class="switch-form">
-            New to MyIndia?
-            <a href="#" onclick="toggleForms()">Create Account</a>
-          </p>
-        </form>
-      </div>
+    <!-- Single Form Container with Toggle -->
+    <div class="form-container" id="authForm">
+        <div class="corner-decoration top-left"></div>
+        <div class="corner-decoration bottom-right"></div>
+        
+        <!-- Login Form -->
+        <div id="loginSection">
+            <h2>Welcome Back</h2>
+            <div id="loginError" class="error-message hidden"></div>
+            <form onsubmit="return handleLogin(event)">
+                <div class="input-group">
+                    <input type="text" id="loginId" required placeholder="Email or Mobile">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="loginPassword" required placeholder="Password">
+                </div>
+                <button type="submit">Login</button>
+                
+                <div class="social-buttons">
+                    <button type="button" class="google-btn" onclick="handleGoogleLogin()" title="Login with Google">
+                        <i class="fab fa-google"></i>
+                    </button>
+                    <button type="button" class="facebook-btn" onclick="handleFacebookLogin()" title="Login with Facebook">
+                        <i class "fab fa-facebook-f"></i>
+                    </button>
+                </div>
+                <p>New to MyIndia? <a href="#" onclick="toggleForms()">Create Account</a></p>
+            </form>
+        </div>
 
-      <div class="glass-form hidden" id="signupForm">
-        <h2>Create Account</h2>
-        <div id="signupError" class="error-message hidden"></div>
-        <form onsubmit="return handleSignup(event)">
-          <div class="input-group">
-            <i class="fas fa-user"></i>
-            <input type="text" id="fullName" required placeholder="Full Name" />
-          </div>
-          <div class="input-group">
-            <i class="fas fa-envelope"></i>
-            <input
-              type="text"
-              id="signupId"
-              required
-              placeholder="Email or Mobile Number"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$|[0-9]{10}"
-            />
-          </div>
-          <div class="input-group">
-            <i class="fas fa-lock"></i>
-            <input
-              type="password"
-              id="signupPassword"
-              required
-              placeholder="Password"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            />
-          </div>
-          <button type="submit" class="gradient-btn">Sign Up</button>
-
-          <div class="social-login">
-            <p>Or signup with</p>
-            <div class="social-buttons">
-              <button
-                type="button"
-                class="google-btn"
-                onclick="handleGoogleLogin()"
-                title="Login with Google"
-              >
-                <i class="fab fa-google"></i>
-              </button>
-              <button
-                type="button"
-                class="facebook-btn"
-                onclick="handleFacebookLogin()"
-                title="Login with Facebook"
-              >
-                <i class="fab fa-facebook-f"></i>
-              </button>
-            </div>
-          </div>
-          <p class="switch-form">
-            Already have an account?
-            <a href="#" onclick="toggleForms()">Login</a>
-          </p>
-        </form>
-      </div>
-    </main>
+        <!-- Signup Form -->
+        <div id="signupSection" class="hidden">
+            <h2>Create Account</h2>
+            <div id="signupError" class="error-message hidden"></div>
+            <form onsubmit="return handleSignup(event)">
+                <div class="input-group">
+                    <input type="text" id="fullName" required placeholder="Full Name">
+                </div>
+                <div class="input-group">
+                    <input type="text" id="signupId" required placeholder="Email or Mobile">
+                </div>
+                <div class="input-group">
+                    <input type="password" id="signupPassword" required placeholder="Password">
+                </div>
+                <button type="submit">Sign Up</button>
+                
+                <div class="social-buttons">
+                    <button type="button" class="google-btn" onclick="handleGoogleLogin()" title="Login with Google">
+                        <i class="fab fa-google"></i>
+                    </button>
+                    <button type="button" class="facebook-btn" onclick="handleFacebookLogin()" title="Login with Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                </div>
+                <p>Already have an account? <a href="#" onclick="toggleForms()">Login</a></p>
+            </form>
+        </div>
+    </div>
 
     <div id="footer-placeholder"></div>
-
-    <script src="/js/components.js"></script>
-    <script src="/js/userAuth.js"></script>
+    <script src="/js/float-nav.js"></script>
     <script src="/js/login.js"></script>
-  </body>
+</body>
 </html>
