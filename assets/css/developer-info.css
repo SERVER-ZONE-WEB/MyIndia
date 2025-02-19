@@ -1,43 +1,68 @@
 .developer-section {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 1.5rem;
-    border-radius: 10px;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(51, 51, 51, 0.8));
+    padding: 2rem;
+    border-radius: 20px;
     margin-top: 2rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 .developer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
     align-items: center;
 }
 
 .developer-info {
     text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.developer-info:hover {
+    transform: translateY(-10px);
 }
 
 .developer-logo {
-    max-width: 150px;
-    margin-bottom: 1rem;
+    max-width: 120px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    border: 3px solid #ff9933;
+    padding: 5px;
+    background: white;
 }
 
 .dev-social-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .dev-social-links a {
     color: #ff9933;
-    transition: transform 0.3s ease;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
 }
 
 .dev-social-links a:hover {
-    transform: translateY(-3px);
+    color: #ffffff;
+    transform: translateY(-5px) rotate(8deg);
 }
 
 .company-details {
-    font-size: 0.9rem;
-    opacity: 0.8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cccccc;
+    margin: 1rem 0;
+}
+
+.developer-info h4 {
+    color: #ff9933;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
